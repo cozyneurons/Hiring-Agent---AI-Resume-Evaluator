@@ -45,7 +45,7 @@ Repo: [Hiring-Agent---AI-Resume-Evaluator](https://github.com/VimalMishra-Myanat
 | Key | Value |
 |-----|--------|
 | `LLM_PROVIDER` | `gemini` |
-| `DEFAULT_MODEL` | `gemini-2.5-flash` |
+| `DEFAULT_MODEL` | `gemini-3.1-flash-lite` |
 | `GEMINI_API_KEY` | *(optional)* |
 | `ALLOWED_ORIGINS` | `https://your-ui.onrender.com` |
 
