@@ -144,7 +144,7 @@ You are evaluating a resume for a Software Intern position at HackerRank. Analyz
 ## CRITICAL REQUIREMENTS
 1. You MUST respond with ONLY the JSON structure below - no summary, no other fields
 2. You MUST fill ALL FOUR score categories: open_source, self_projects, production, technical_skills
-3. You MUST provide highly detailed evidence for each score. The `evidence`, `breakdown`, and `reasons` fields MUST be detailed, bulleted lists explaining EXACTLY how many points were given/deducted for each specific item (e.g., "- 10 points for Project X complexity\n- 5 points for Project Y").
+3. You MUST provide highly detailed evidence for each score. The `evidence` fields in scores, the `breakdown` field in bonus_points, and the `reasons` field in deductions MUST be detailed, bulleted lists explaining EXACTLY how many points were given/deducted for each specific item (e.g., "- 10 points for Project X complexity\n- 5 points for Project Y").
 4. You MUST NOT add any other fields like "summary", "skills", "experience", etc.
 5. You MUST NOT change the field names or structure
 
@@ -169,13 +169,13 @@ Analyze the following resume and provide a JSON response with this EXACT structu
 
 {
     "scores": {
-        "open_source": {"score": 0, "max": 35, "evidence": "string"},
-        "self_projects": {"score": 0, "max": 30, "evidence": "string"},
-        "production": {"score": 0, "max": 25, "evidence": "string"},
-        "technical_skills": {"score": 0, "max": 10, "evidence": "string"}
+        "open_source": {"score": 0, "max": 35, "evidence": "string (bulleted list detailing points)"},
+        "self_projects": {"score": 0, "max": 30, "evidence": "string (bulleted list detailing points)"},
+        "production": {"score": 0, "max": 25, "evidence": "string (bulleted list detailing points)"},
+        "technical_skills": {"score": 0, "max": 10, "evidence": "string (bulleted list detailing points)"}
     },
-    "bonus_points": {"total": 0, "breakdown": "string"},
-    "deductions": {"total": 0, "reasons": "string"},
+    "bonus_points": {"total": 0, "breakdown": "string (bulleted list detailing bonus points)"},
+    "deductions": {"total": 0, "reasons": "string (bulleted list detailing deduction points)"},
     "key_strengths": ["strength1", "strength2", "strength3", "strength4", "strength5"],
     "areas_for_improvement": ["improvement1", "improvement2", "improvement3"]
 }
