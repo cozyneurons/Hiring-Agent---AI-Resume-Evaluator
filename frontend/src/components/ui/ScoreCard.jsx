@@ -60,9 +60,20 @@ export default function ScoreCard({ categoryKey, score, max, evidence }) {
           expanded ? 'max-h-96 opacity-100 mt-3' : 'max-h-0 opacity-0'
         }`}
       >
-        <p className="text-sm text-hr-muted leading-relaxed p-3 rounded-lg bg-hr-surface/80 border border-hr-border/40 whitespace-pre-line">
-          {evidence}
-        </p>
+        {Array.isArray(evidence) ? (
+          <ul className="space-y-2 p-3 rounded-lg bg-hr-surface/80 border border-hr-border/40">
+            {evidence.map((item, i) => (
+              <li key={i} className="text-sm text-hr-muted leading-relaxed flex gap-2 items-start">
+                <span className="text-hr-green shrink-0 mt-0.5">•</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p className="text-sm text-hr-muted leading-relaxed p-3 rounded-lg bg-hr-surface/80 border border-hr-border/40 whitespace-pre-line">
+            {evidence}
+          </p>
+        )}
       </div>
     </div>
   )

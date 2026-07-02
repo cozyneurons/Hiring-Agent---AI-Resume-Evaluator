@@ -715,14 +715,16 @@ def transform_evaluation_response(
     # Extract bonus points and deductions
     if evaluation and hasattr(evaluation, "bonus_points"):
         csv_row["bonus_points"] = evaluation.bonus_points.total
-        csv_row["bonus_breakdown"] = evaluation.bonus_points.breakdown
+        b_down = evaluation.bonus_points.breakdown
+        csv_row["bonus_breakdown"] = "; ".join(b_down) if isinstance(b_down, list) else b_down
     else:
         csv_row["bonus_points"] = 0
         csv_row["bonus_breakdown"] = ""
 
     if evaluation and hasattr(evaluation, "deductions"):
         csv_row["deductions"] = evaluation.deductions.total
-        csv_row["deduction_reasons"] = evaluation.deductions.reasons
+        r_sons = evaluation.deductions.reasons
+        csv_row["deduction_reasons"] = "; ".join(r_sons) if isinstance(r_sons, list) else r_sons
     else:
         csv_row["deductions"] = 0
         csv_row["deduction_reasons"] = ""

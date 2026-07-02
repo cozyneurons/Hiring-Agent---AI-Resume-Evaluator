@@ -9,9 +9,20 @@ export default function BonusDeductionsPanel({ bonus, deductions }) {
             <span className="text-sm font-medium text-hr-green">Bonus Points</span>
             <span className="text-xl font-bold text-hr-green">+{bonus?.total ?? 0}</span>
           </div>
-          <p className="text-sm text-hr-muted leading-relaxed whitespace-pre-line">
-            {bonus?.breakdown || 'No bonus points awarded.'}
-          </p>
+          {Array.isArray(bonus?.breakdown) ? (
+            <ul className="space-y-1 mt-2">
+              {bonus.breakdown.map((item, i) => (
+                <li key={i} className="text-sm text-hr-muted leading-relaxed flex gap-2 items-start">
+                  <span className="text-hr-green shrink-0 mt-0.5">•</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className="text-sm text-hr-muted leading-relaxed whitespace-pre-line mt-2">
+              {bonus?.breakdown || 'No bonus points awarded.'}
+            </p>
+          )}
         </div>
 
         <div className="p-4 rounded-xl bg-hr-danger/5 border border-hr-danger/20">
@@ -21,9 +32,20 @@ export default function BonusDeductionsPanel({ bonus, deductions }) {
               −{deductions?.total ?? 0}
             </span>
           </div>
-          <p className="text-sm text-hr-muted leading-relaxed whitespace-pre-line">
-            {deductions?.reasons || 'No deductions applied.'}
-          </p>
+          {Array.isArray(deductions?.reasons) ? (
+            <ul className="space-y-1 mt-2">
+              {deductions.reasons.map((item, i) => (
+                <li key={i} className="text-sm text-hr-muted leading-relaxed flex gap-2 items-start">
+                  <span className="text-hr-danger shrink-0 mt-0.5">•</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className="text-sm text-hr-muted leading-relaxed whitespace-pre-line mt-2">
+              {deductions?.reasons || 'No deductions applied.'}
+            </p>
+          )}
         </div>
       </div>
     </SectionCard>

@@ -218,7 +218,7 @@ class JSONResume(BaseModel):
 class CategoryScore(BaseModel):
     score: float = Field(ge=0, description="Score achieved in this category")
     max: int = Field(gt=0, description="Maximum possible score")
-    evidence: str = Field(min_length=1, description="Evidence supporting the score")
+    evidence: List[str] = Field(min_length=1, description="Evidence supporting the score")
 
 
 class Scores(BaseModel):
@@ -230,7 +230,7 @@ class Scores(BaseModel):
 
 class BonusPoints(BaseModel):
     total: float = Field(ge=0, le=20, description="Total bonus points")
-    breakdown: str = Field(description="Breakdown of bonus points")
+    breakdown: List[str] = Field(description="Breakdown of bonus points")
 
 
 class Deductions(BaseModel):
@@ -238,7 +238,7 @@ class Deductions(BaseModel):
         ge=0,
         description="Total deduction points (stored as positive, applied as negative)",
     )
-    reasons: str = Field(description="Reasons for deductions")
+    reasons: List[str] = Field(description="Reasons for deductions")
 
 
 class EvaluationData(BaseModel):
