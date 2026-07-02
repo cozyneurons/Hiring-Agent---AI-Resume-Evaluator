@@ -9,7 +9,7 @@ export default function BonusDeductionsPanel({ bonus, deductions }) {
             <span className="text-sm font-medium text-hr-green">Bonus Points</span>
             <span className="text-xl font-bold text-hr-green">+{bonus?.total ?? 0}</span>
           </div>
-          <p className="text-sm text-hr-muted leading-relaxed">
+          <p className="text-sm text-hr-muted leading-relaxed whitespace-pre-line">
             {bonus?.breakdown || 'No bonus points awarded.'}
           </p>
         </div>
@@ -21,7 +21,7 @@ export default function BonusDeductionsPanel({ bonus, deductions }) {
               −{deductions?.total ?? 0}
             </span>
           </div>
-          <p className="text-sm text-hr-muted leading-relaxed">
+          <p className="text-sm text-hr-muted leading-relaxed whitespace-pre-line">
             {deductions?.reasons || 'No deductions applied.'}
           </p>
         </div>

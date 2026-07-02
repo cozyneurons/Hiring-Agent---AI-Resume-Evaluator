@@ -60,7 +60,7 @@ export default function ScoreCard({ categoryKey, score, max, evidence }) {
           expanded ? 'max-h-96 opacity-100 mt-3' : 'max-h-0 opacity-0'
         }`}
       >
-        <p className="text-sm text-hr-muted leading-relaxed p-3 rounded-lg bg-hr-surface/80 border border-hr-border/40">
+        <p className="text-sm text-hr-muted leading-relaxed p-3 rounded-lg bg-hr-surface/80 border border-hr-border/40 whitespace-pre-line">
           {evidence}
         </p>
       </div>
