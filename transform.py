@@ -675,15 +675,19 @@ def transform_evaluation_response(
 
         csv_row["open_source_score"] = scores.open_source.score
         csv_row["open_source_max"] = scores.open_source.max
+        csv_row["open_source_missing_points"] = scores.open_source.missing_points_explanation
 
         csv_row["self_projects_score"] = scores.self_projects.score
         csv_row["self_projects_max"] = scores.self_projects.max
+        csv_row["self_projects_missing_points"] = scores.self_projects.missing_points_explanation
 
         csv_row["production_score"] = scores.production.score
         csv_row["production_max"] = scores.production.max
+        csv_row["production_missing_points"] = scores.production.missing_points_explanation
 
         csv_row["technical_skills_score"] = scores.technical_skills.score
         csv_row["technical_skills_max"] = scores.technical_skills.max
+        csv_row["technical_skills_missing_points"] = scores.technical_skills.missing_points_explanation
 
         total_score = (
             scores.open_source.score

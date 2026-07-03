@@ -17,7 +17,9 @@ def validate_gemini_api_key(api_key: str) -> tuple[bool, str]:
         import google.generativeai as genai
 
         genai.configure(api_key=key)
-        model = genai.GenerativeModel(model_name=DEFAULT_MODEL)
+        # Always use a valid Gemini model for the ping test, 
+        # because DEFAULT_MODEL might be set to an Ollama model like gemma3:4b
+        model = genai.GenerativeModel(model_name="gemini-1.5-flash")
         response = model.generate_content(
             "Reply with exactly: OK",
             generation_config={"max_output_tokens": 8, "temperature": 0},
@@ -26,6 +28,7 @@ def validate_gemini_api_key(api_key: str) -> tuple[bool, str]:
             return True, "API key verified successfully."
         return True, "API key verified successfully."
     except Exception as exc:
+        print(f"Gemini API Validation Error: {exc}")
         message = str(exc).lower()
         if any(
             token in message

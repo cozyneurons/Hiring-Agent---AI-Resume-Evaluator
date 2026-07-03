@@ -17,6 +17,7 @@ export default function CategoryBreakdown({ scores }) {
             score={cat.score}
             max={cat.max}
             evidence={cat.evidence}
+            missingPointsExplanation={cat.missing_points_explanation}
           />
         )
       })}

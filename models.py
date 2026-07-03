@@ -219,6 +219,10 @@ class CategoryScore(BaseModel):
     score: float = Field(ge=0, description="Score achieved in this category")
     max: int = Field(gt=0, description="Maximum possible score")
     evidence: List[str] = Field(min_length=1, description="Evidence supporting the score")
+    missing_points_explanation: str = Field(
+        default="", 
+        description="If score < max, explain exactly why the remaining points were not awarded. If score == max, leave empty."
+    )
 
 
 class Scores(BaseModel):
