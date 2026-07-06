@@ -340,6 +340,6 @@ Please read the [CONTRIBUTING.md](./CONTRIBUTING.md) for detailed guidelines on 
 This project is licensed under the [MIT License](./LICENSE).
 
 - Original work: © [HackerRank](https://www.hackerrank.com) ([interviewstreet/hiring-agent](https://github.com/interviewstreet/hiring-agent))
-- Modifications in this fork: © Vimal Mishra
+- Modifications in this fork: © Vimal Mishra, Modified by Shubham
 
 You must retain the original MIT copyright and license notice when redistributing.

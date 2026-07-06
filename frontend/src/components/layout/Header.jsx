@@ -42,10 +42,10 @@ function PersonalBranding() {
   return (
     <div className="flex items-center gap-2 sm:gap-2.5">
       <span className="brand-credit hidden sm:inline text-xs text-hr-muted whitespace-nowrap">
-        Built by {BRANDING.name} 🚀
+        Built by {BRANDING.name}, Modified by Shubham 🚀
       </span>
-      <span className="brand-credit sm:hidden text-xs text-hr-muted" title={`Built by ${BRANDING.name}`}>
-        {BRANDING.name.split(' ')[0]} 🚀
+      <span className="brand-credit sm:hidden text-xs text-hr-muted" title={`Built by ${BRANDING.name}, Modified by Shubham`}>
+        {BRANDING.name.split(' ')[0]} & Shubham 🚀
       </span>
       <a
         href={BRANDING.linkedInUrl}
